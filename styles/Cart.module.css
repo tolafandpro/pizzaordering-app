@@ -1,0 +1,129 @@
+.container{
+    padding: 50px;
+    display: flex;
+}
+
+.left{
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+}
+
+.tables{
+    width: 100%;
+    border-spacing: 30px;
+}
+
+.tr{
+    border: #555 1px solid;
+}
+
+.th{
+    font-weight: bold;
+}
+
+.name{
+    font-weight: 500;
+    color: royalblue;
+    font-size: 18px;
+}
+
+
+.imgContainer{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.right{
+    flex: 1;
+}
+
+.total{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.rightWrapper{
+    color: white;
+    width: 90%;
+    max-height: 300px;
+    padding: 10px 50px 50px 50px;
+    background-color: #777;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+}
+
+.title{
+    text-transform: capitalize;
+}
+
+.priceListText{
+    margin-right: 20px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    background-color: rgb(8, 118, 8);
+}
+
+@media screen and (max-width: 400px) {
+        .container {
+            padding: 20px;
+            flex-direction: column;
+        }   
+        
+        .trTitle {
+            display: none;
+        }
+        .tr {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rightWrapper, .button {
+            width: 100%;
+            font-size: 20px;
+        }
+
+        .extra, .price, .qty {
+            font-size: 22px;
+        }
+
+        .name, .total{
+            font-size: 24px;
+        }
+
+        .price::before {
+            content: "Price: ";
+            font-weight: 500;
+        }
+        .qty::before {
+            content: "Quantity: ";
+            font-weight: 500;
+        }
+        .total::before {
+            content: "Total: ";
+            font-weight: 500;
+        }
+}

@@ -1,0 +1,156 @@
+.container {
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
+.left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: green; */
+}
+
+.imgContainer {
+  width: 50%;
+  height: 50%;
+  position: relative;
+}
+
+.add {
+  height: max-content;
+}
+
+.right {
+  flex: 1;
+  padding: 20px;
+  /* background-color: blue; */
+}
+
+.price {
+  color: crimson;
+  font-size: 24px;
+  font-weight: 400;
+  border-bottom: 1px solid crimson;
+}
+
+.sizes {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+.size {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.size:nth-child(2) {
+  width: 40px;
+  height: 40px;
+}
+
+.size:last-child {
+  height: 50px;
+  width: 50px;
+}
+
+.number {
+  position: absolute;
+  top: -10px;
+  right: -30px;
+  background-color: teal;
+  color: white;
+  font-size: 12px;
+  padding: 0px 5px;
+  border-radius: 10px;
+}
+
+.ingredients {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.quantity {
+  width: 50px;
+  height: 30px;
+}
+
+.button {
+  height: 30px;
+  margin-left: 10px;
+  background-color: teal;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    text-align: center;
+    height: fit-content;
+  }
+
+  .imgContainer {
+    width: 54vw;
+    height: 30vh;
+  }
+
+  .title {
+    margin: 0px;
+  }
+
+  .sizes {
+    width: 100%;
+    padding: 0px 20px;
+  }
+
+  .ingredients {
+    flex-direction: column;
+  }
+
+  .option {
+    margin: 10px;
+    font-size: 18px;
+  }
+
+  .checkbox {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .quantity {
+    height: 50px;
+    width: 50px;
+    padding: 5px 20px;
+    margin-top: 50px;
+  }
+
+  .button {
+    height: 50px;
+    width: 100px;
+  }
+}
