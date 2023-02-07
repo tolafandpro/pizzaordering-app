@@ -4,13 +4,33 @@ import { useState } from "react";
 import axios from "axios";
 
 const Product = ({ pizza }) => {
+  const [price, setPrice] = useState(pizza.price[0]);
   const [size, setSize] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [extras, setExtras] = useState([]);
+
+  const changePrice = (number) => {
+    setPrice(price + number);
+  };
+
+  const handleSize = (sizeIndex) => {
+    const difference = pizza.price[sizeIndex] - pizza.price[size];
+    setSize(sizeIndex);
+    changePrice(difference);
+  };
 
   const handleChange = (e, option) => {
     const checked = e.target.checked;
     if (checked) {
+      changePrice(option.price);
+      setExtras((prev) => [...prev, option]);
+    } else {
+      changePrice(-option.price);
+      setExtras(extras.filter((extra) => extra._id !== option._id));
     }
   };
+
+  console.log(extras);
 
   //    const pizza = {
   //         id: 1,
@@ -35,11 +55,11 @@ const Product = ({ pizza }) => {
       </div>
       <div className={styles.right}>
         <h1 className={styles.title}>{pizza.name}</h1>
-        <span className={styles.price}>${pizza.price[size]}</span>
+        <span className={styles.price}>${price}</span>
         <p className={styles.desc}>{pizza.desc}</p>
         <h3 className={styles.select}>Select a size</h3>
         <div className={styles.sizes}>
-          <div className={styles.size} onClick={() => setSize(0)}>
+          <div className={styles.size} onClick={() => handleSize(0)}>
             <Image
               src="/images/pizzaicon.png"
               alt="pizza-icon-small"
@@ -47,7 +67,7 @@ const Product = ({ pizza }) => {
             />
             <span className={styles.number}>Small</span>
           </div>
-          <div className={styles.size} onClick={() => setSize(1)}>
+          <div className={styles.size} onClick={() => handleSize(1)}>
             <Image
               src="/images/pizzaicon.png"
               alt="pizza-icon-medium"
@@ -55,7 +75,7 @@ const Product = ({ pizza }) => {
             />
             <span className={styles.number}>Medium</span>
           </div>
-          <div className={styles.size} onClick={() => setSize(2)}>
+          <div className={styles.size} onClick={() => handleSize(2)}>
             <Image
               src="/images/pizzaicon.png"
               alt="pizza-icon-large"
@@ -80,7 +100,12 @@ const Product = ({ pizza }) => {
           ))}
         </div>
         <div className={styles.add}>
-          <input type="number" defaultValue={1} className={styles.quantity} />
+          <input
+            onChange={(e) => setQuantity(e.target.value)}
+            type="number"
+            defaultValue={1}
+            className={styles.quantity}
+          />
           <button className={styles.button}>Add to Cart</button>
         </div>
       </div>
