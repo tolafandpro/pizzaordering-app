@@ -3,6 +3,7 @@ import Logo from "../subComponents/Logo";
 import Image from "next/image";
 import { Pizza, Burger, Fries, Drink } from "../subComponents/MenuSvgs";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.cartqty);
@@ -21,24 +22,28 @@ const Navbar = () => {
         </div>
         <div className={styles.item}>
           <ul className={styles.list}>
-            <li className={styles.listItem}>Home</li>
+            <Link href={"/"}>
+              <li className={styles.listItem}>Home</li>
+            </Link>
             <li className={styles.listItem}>Menu</li>
             <li className={styles.listItem}>News</li>
             <li className={styles.listItem}>Store Loocator</li>
           </ul>
         </div>
-        <div className={styles.item}>
-          <div className={styles.cart}>
-            <Image
-              src="/images/kisspng-shopping-cart.png"
-              width="35px"
-              height="35px"
-              className={styles.cartImg}
-              alt=""
-            />
-            <div className={styles.spanNum}>{quantity}</div>
+        <Link href="/cart" passHref>
+          <div className={styles.item}>
+            <div className={styles.cart}>
+              <Image
+                src="/images/kisspng-shopping-cart.png"
+                width="35px"
+                height="35px"
+                className={styles.cartImg}
+                alt=""
+              />
+              <div className={styles.spanNum}>{quantity}</div>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
       <div className={styles.wrapperBottom}>
         <div className={styles.itemBottom}>

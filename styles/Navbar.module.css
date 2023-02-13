@@ -1,129 +1,135 @@
-.container{
-    background-color: #d3eefe;
-    position: sticky;
+.container {
+  background-color: #d3eefe;
+  position: sticky;
 }
 
-.wrapper{
-    display: flex;
-    /* height: 20%; */
-    /* align-items: center; */
-    max-width: 80em;
-    margin: 0px auto;
-    justify-content: space-between;
+.wrapper {
+  display: flex;
+  /* height: 20%; */
+  /* align-items: center; */
+  max-width: 80em;
+  margin: 0px auto;
+  justify-content: space-between;
 }
 
-.item{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid white;
-    /* position: relative; */
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid white;
+  /* position: relative; */
 }
 
-.cart{
-    position: relative;
+.cart {
+  position: relative;
+  cursor: pointer;
 }
 
 .spanNum {
-    border: 1px solid red;
-    border-radius: 50%;
-    padding: 1px;
-    background-color: red;
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top:-5px;
-    right:-2px;
+  border: 1px solid red;
+  border-radius: 50%;
+  padding: 1px;
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -5px;
+  right: -2px;
 }
 .item:nth-child(2) {
-    flex: 3;
-    justify-content: center;
-    align-items: center;
-    /* background-color: chartreuse; */
+  flex: 3;
+  justify-content: center;
+  align-items: center;
+  /* background-color: chartreuse; */
 }
 .item:last-child {
-   justify-content: flex-end;
-   /* background-color: red; */
+  justify-content: flex-end;
+  /* background-color: red; */
 }
 
-.wrapperBottom{
-   display: flex;
-
+.wrapperBottom {
+  display: flex;
 }
-.itemBottom{
-    align-items: center;
-    justify-content: center;
-    margin: 0px auto;
+.itemBottom {
+  align-items: center;
+  justify-content: center;
+  margin: 0px auto;
 }
 
 .list {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    color: #151515;
-    /* align-items: center; */
+  padding: 0;
+  list-style: none;
+  display: flex;
+  color: #151515;
+  cursor: pointer;
+  /* align-items: center; */
 }
 
 .listItem {
-    margin: 20px;
-    font-weight: 500;
+  margin: 20px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.listItem:hover {
+  color: rgb(110, 223, 102);
 }
 
 .listBottom {
-    display: flex;
-    list-style: none;  
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
 }
 
 .listItemBottom {
-    margin: 5px 50px;
-   justify-content: space-between;
-   color: #555;
-   cursor: pointer;
-   font-weight: 500;
+  margin: 5px 50px;
+  justify-content: space-between;
+  color: #555;
+  cursor: pointer;
+  font-weight: 500;
 }
 .listItemBottom:hover {
-    margin: 5px 50px;
-   justify-content: space-between;
-   color: blue;
+  margin: 5px 50px;
+  justify-content: space-between;
+  color: blue;
 }
 
-@media screen and (max-width:480px) {
-    .logo > Image {
-        width: 60px;
-        height: 60px;
-    }
-    .item:nth-child(2) {
-        display: none;
-    }
-    .item:nth-child(1) {
-        flex: 2;
-        padding-left: 1rem;
-    }
-    .item:nth-child(3) {
-        flex: 1;
-        justify-content: center;
-    }
+@media screen and (max-width: 480px) {
+  .logo > Image {
+    width: 60px;
+    height: 60px;
+  }
+  .item:nth-child(2) {
+    display: none;
+  }
+  .item:nth-child(1) {
+    flex: 2;
+    padding-left: 1rem;
+  }
+  .item:nth-child(3) {
+    flex: 1;
+    justify-content: center;
+  }
 
-    .wrapperBottom{
-        display: none;
-    }
-    .cartImg {
-        width: 5px;
-        height: 5px;
-    }
-    .spanNum {
-        border: 1px solid red;
-        border-radius: 50%;
-        background-color: red;
-        color:white;
-        position: absolute;
-        display: flex;
-    }
+  .wrapperBottom {
+    display: none;
+  }
+  .cartImg {
+    width: 5px;
+    height: 5px;
+  }
+  .spanNum {
+    border: 1px solid red;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    position: absolute;
+    display: flex;
+  }
 }
